@@ -1,12 +1,12 @@
 import streamlit as st
 from pdf_utils import extract_text_from_pdf
 from summarizer import summarize_text, check_summarize_button
-from transformers import MBartForConditionalGeneration, MBart50TokenizerFast
+from transformers import MBartForConditionalGeneration, MBart50Tokenizer
 
 # Initialize session state
 if "model" not in st.session_state:
     model_name = "facebook/mbart-large-50"
-    st.session_state.tokenizer = MBart50TokenizerFast.from_pretrained(model_name)
+    st.session_state.tokenizer = MBart50Tokenizer.from_pretrained(model_name)
     st.session_state.model = MBartForConditionalGeneration.from_pretrained(model_name)
 
 # Streamlit UI
