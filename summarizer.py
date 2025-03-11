@@ -1,7 +1,7 @@
 from transformers import MBartForConditionalGeneration, MBart50TokenizerFast
 import streamlit as st
 import re
-
+# w in the chat
 MIN_INPUT_LENGTH = 30
 
 def summarize_text(text, model, tokenizer, min=30, max=100):  
